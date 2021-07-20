@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS Promises</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<style>
+		body { font-family: "Consolas"; font-size: 150%; }
+		input {  font-size: 100%; width: 80%; }
+	</style>
+</head>
+<body>
+	<!-- Main-Controller -->
+	<div ng-controller="myCtrl as ctrl">
+		Name of a city in cities : <br>
+		{{ ctrl.cities.marrakesh }} <br><br>
+
+		Random number : {{ ctrl.randomNumber }}
+	</div>
+</body>
+</html>

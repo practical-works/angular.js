@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS Scope and Digest Course Practice</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+	<style>
+		body { font-family: "Consolas"; font-size: 150%; }
+		input {  font-size: 100%; width: 80%; }
+	</style>
+</head>
+<body>
+	<!-- Main-Controller -->
+	<div ng-controller="mainCtrl as X">
+		<div>
+			<p>Main-F: {{ X.force }}</p>
+			<input ng-model="X.force" type="number">
+		</div>
+
+		<!-- Sub-Controller -->
+		<div ng-controller="subCtrl as X">
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main-F from Sub:
+				<span style="color: orange;">{{ X.mainX.force }}</span>
+			</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sub-F:
+				<span style="color: red;">{{ X.force }}</span>
+			</p>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input ng-model="X.force" type="number" style="color: red;">
+		</div>
+		<!-- End of Sub-Controller -->
+	</div>
+	<!-- End of Main-Controller -->
+	<hr>
+
+	<div ng-controller="ctrl as c" ng-init="ok=false;">
+		<p>♫ {{ c.msg }}</p>
+		<input ng-if="!ok" ng-model="c.msg" type="text">
+		<button ng-click="c.obj.random()">Write something random</button>
+	</div>
+</body>
+</html>
